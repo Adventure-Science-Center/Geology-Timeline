@@ -1,0 +1,68 @@
+html, body {
+    overflow: hidden;
+    background-color: black;
+}
+.eon {
+    width: 100%;
+    transition: 1s;
+}
+.eon-collapsed {
+    height: 7%!important;
+}
+.eon-collapsed .eon-title {
+    font-size: 3vh;
+}
+.eon-collapsed .eon-time {
+    opacity: 0;
+}
+.eon-expanded {
+    height: calc(95vh - 21%)!important;
+}
+.eon-expanded .eon-title {
+    font-size: 5vh;
+}
+.eon-expanded .eon-time {
+    font-size: 3vh;
+    opacity: 1;
+}
+.eon-time {
+    color: white;
+    font-size: 2.5vh;
+    opacity: 1;
+    text-align: center;
+    transition: 1s;
+}
+.eon-title {
+    color: white;
+    font-size: 4vh;
+    text-align: center;
+    padding-top: 1vh;
+    transition: 1s;
+}
+#archean {
+    height: 33.5%;
+    background-color: #0076BA;
+}
+#eonContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 95vh;
+}
+#hadean {
+    height: 11.7%;
+    background-color: #004D80;
+}
+#phanerozoic {
+    height: 11.8%;
+    background-color: #56C1FF;
+}
+#proterozoic {
+    height: 42.9%;
+    background-color: #00A2FF;
+}
+#toolbar {
+    width: 100vw;
+    height: 5vh;
+    background-color: gray;
+}
