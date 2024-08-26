@@ -6,6 +6,8 @@ html, body {
     height: 0%!important;
     opacity: 0%!important;
     pointer-events: none;
+    padding: 0px!important;
+    margin: 0px!important
 }
 .eon {
     width: 100%;
@@ -58,6 +60,8 @@ html, body {
     height: 15%;
     opacity: 0;
     padding: 1vh;
+    margin-top: 1vh;
+    overflow: hidden;
     transition: 1s;
 }
 .eon-time {
@@ -96,7 +100,7 @@ html, body {
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 66.5%!important;
+    height: 65.5%!important;
     opacity: 0;
     margin-top: 1vh;
     transition: 1s;
@@ -110,6 +114,10 @@ html, body {
 }
 .era-expanded .era-summary {
     opacity: 1;
+}
+.era-expanded .period-container {
+    opacity: 1;
+    pointer-events: auto!important;
 }
 .era-summary {
     color: white;
@@ -126,6 +134,7 @@ html, body {
     transition: 1s;
     padding: 1vh;
     margin-top: 1vh;
+    overflow: hidden;
 }
 .era-time {
     color: white;
@@ -136,6 +145,81 @@ html, body {
     color: white;
     font-size: 3vh;
     text-align: center;
+}
+.period {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+    min-height: 12%!important;
+}
+.period-collapsed {
+    height: 12%!important;
+}
+.period-collapsed .period-title {
+    font-size: 2.5vh!important; /* Kludge for quaternary */
+}
+.period-collapsed .period-time {
+    height: 0%!important;
+    opacity: 0;
+}
+.period-collapsed .period-summary {
+    height: 0%!important;
+    opacity: 0;
+}
+.period-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 62.5%!important;
+    opacity: 0;
+    margin-top: 1vh;
+    transition: 1s;
+    pointer-events: none;
+}
+.period-container-expanded {
+    height: 79%!important;
+}
+.period-expanded {
+    height: 80%!important;
+}
+.period-expanded .period-summary {
+    opacity: 1;
+}
+.period-expanded .period-title {
+    font-size: 2.8vh!important;
+}
+.period-expanded .period-time {
+    font-size: 1.3vh!important; /* Kludge for quaternary */
+}
+.period-summary {
+    color: white;
+    font-size: 1.5vh;
+    background-color: #006C65;
+    width: 90%;
+    border-radius: .8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 30%;
+    opacity: 0;
+    transition: 1s;
+    padding: 1vh;
+    margin-top: 1vh;
+    overflow: hidden;
+}
+.period-time {
+    color: white;
+    font-size: 1.3vh;
+    text-align: center;
+    transition: 1s;
+}
+.period-title {
+    color: white;
+    font-size: 2.5vh;
+    text-align: center;
+    transition: 1s;
 }
 
 #archean {
@@ -152,6 +236,9 @@ html, body {
 #hadean {
     height: 11.7%;
     background-color: #004D80;
+}
+#hadeanEras {
+    display: none;
 }
 #phanerozoic {
     height: 11.8%;
