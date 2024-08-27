@@ -30,7 +30,9 @@ const eras = {
     name_en: 'Cenozoic Era',
     periods: ['quaternary', 'neogene', 'paleogene'],
     summary_en: "The Cenozoic is the current era of Earth's history. It is marked by the flourishing of mammals and birds and the emergence of humans.",
-    time_en: '66 Mya – Today'
+    time_en: '66 Mya – Today',
+    titleSize: 'medium',
+    timeSize: 'medium'
   },
   eoarchean: {
     height: 28.2,
@@ -52,7 +54,7 @@ const eras = {
     height: 30.6,
     color: 'RGBA(151,14,83,0.75)',
     name_en: 'Mesoproterozoic Era',
-    periods: [],
+    periods: ['stenian', 'ectasian', 'calymmian'],
     summary_en: "The Mesoproterozoic is the first era for which a comprehensive geologic record has been found. The continents we know today began to emerge, although their shapes were very different.",
     time_en: '1600 – 1000 Mya'
   },
@@ -60,7 +62,7 @@ const eras = {
     height: 34.5,
     color: 'RGBA(151,14,83,0.75)',
     name_en: 'Mesozoic Era',
-    periods: [],
+    periods: ['cretaceous', 'jurassic', 'triassic', ],
     summary_en: "The Mesozoic was dominated by the evolution of the dinosaurs, which lasted until a major extinction event 66 Mya.",
     time_en: '252 – 66 Mya'
   },
@@ -76,7 +78,7 @@ const eras = {
     height: 23.5,
     color: 'RGBA(151,14,83,0.5)',
     name_en: 'Neoproterozoic Era',
-    periods: [],
+    periods: ['ediacaran', 'cryogenian', 'tonian'],
     summary_en: 'During the Neoproterozoic, Earth became covered in glaciers and the first multi-cellular fossils are preserved.',
     time_en: '1000 – 539 Mya'
   },
@@ -92,7 +94,7 @@ const eras = {
     height: 45.9,
     color: 'RGBA(151,14,83,1)',
     name_en: 'Paleoproterozoic Era',
-    periods: [],
+    periods: ['statherian', 'orosirian', 'rhyacian', 'siderian'],
     summary_en: "The Paleoproterozoic saw the formation of the first continents. The rise of oxygen-producing cyanobacteria lead to a dramatic increase of oxygen in the atmosphere, paving the way for life as we know it.",
     time_en: '2500 – 1600 Mya'
   },
@@ -100,7 +102,7 @@ const eras = {
     height: 53.3,
     color: 'RGBA(151,14,83,1)',
     name_en: 'Paleozoic Era',
-    periods: [],
+    periods: ['permian', 'carboniferous', 'devonian', 'silurian', 'ordovician', 'cambrian'],
     summary_en: "The Paleozoic saw a massive increase in the variety and complexity of life on Earth.",
     time_en: '539 – 252 Mya'
   },
@@ -112,7 +114,9 @@ const periods = {
     color: 'RGBA(242,114,0,0.5)',
     name_en: 'Quaternary Period',
     summary_en: "The Quaternary is Earth's current geologic period, marked by periodic ice ages. It's most notable for the emergence of humans.",
-    time_en: '2.6 Mya – Today'
+    time_en: '2.6 Mya – Today',
+    timeSize: 'small',
+    titleSize: 'small'
   },
   neogene: {
     height: 30.4,
@@ -128,6 +132,148 @@ const periods = {
     summary_en: "After the extinction of the dinosaurs, birds and mammals began to increase in numbers and diversity during teh Paleogene.",
     time_en: '66 – 23 Mya'
   },
+  cretaceous: {
+    height: 42.5,
+    color: 'RGBA(242,114,0,0.5)',
+    name_en: 'Cretaceous Period',
+    summary_en: "Earth's climate was warm during the Cretaceous, leading to large oceans and many seas. Continued to dominate the planet's surface.",
+    time_en: '145 – 66 Mya'
+  },
+  jurassic: {
+    height: 30.3,
+    color: 'RGBA(242,114,0,0.75)',
+    name_en: 'Jurassic Period',
+    summary_en: "During the Jurassic, dinosaurs became the dominent land animals and the supercontinent of Pangaea began to split into two.",
+    time_en: '201 – 145 Mya'
+  },
+  triassic: {
+    height: 27.2,
+    color: 'RGBA(242,114,0,1)',
+    name_en: 'Triassic Period',
+    summary_en: "The Triassic began and end with dramatic worldwide extintion events. In between, reptiles dominated on land, including the emergence of the first dinosaurs.",
+    time_en: '252 – 201 Mya'
+  },
+  permian: {
+    height: 16.4,
+    color: 'RGBA(242,114,0,0.5)',
+    name_en: 'Permian Period',
+    summary_en: "Changing climate conditions during the Permian led to enormous deserts in the interior of the Pangaea supercontinent. The end of the Permian is marked by the largest mass extinction in Earth's history.",
+    time_en: '299 – 252 Mya',
+    timeSize: 'medium',
+    titleSize: 'medium'
+  },
+  carboniferous: {
+    height: 20.9,
+    color: 'RGBA(242,114,0,0.6)',
+    name_en: 'Carboniferous Period',
+    summary_en: "During the Carbonifercous, the supercontinent of Pangaea formed. Amphibians came to dominate the new landmass.",
+    time_en: '359 – 299 Mya'
+  },
+  devonian: {
+    height: 21,
+    color: 'RGBA(242,114,0,0.7)',
+    name_en: 'Devonian Period',
+    summary_en: "During the Devonian, fish became a dominant form of life in the oceans. On land, the variety of species increased substantially.",
+    time_en: '419 – 359 Mya'
+  },
+  silurian: {
+    height: 8.6,
+    color: 'RGBA(242,114,0,0.8)',
+    name_en: 'Silurian Period',
+    summary_en: "During the Silurian, animals from the oceans began to spread onto land and land-based plant life evolved significantly.",
+    time_en: '444 – 419 Mya',
+    timeSize: 'small',
+    titleSize: 'small'
+  },
+  ordovician: {
+    height: 14.5,
+    color: 'RGBA(242,114,0,0.9)',
+    name_en: 'Ordovician Period',
+    summary_en: "The first plant life on land arose during the Ordovician. In the seas, invertibrates such as mollusks were the dominant species.",
+    time_en: '485 – 444 Mya',
+    timeSize: 'small',
+    titleSize: 'small'
+  },
+  cambrian: {
+    height: 18.6,
+    color: 'RGBA(242,114,0,1)',
+    name_en: 'Cambrian Period',
+    summary_en: 'During the "Cambrian explosion", the amount and diversity of complex life on Earth increased dramatically, particularly in the oceans.',
+    time_en: '539 – 485 Mya',
+    timeSize: 'medium',
+    titleSize: 'medium'
+  },
+  ediacaran: {
+    height: 20.9,
+    color: 'RGBA(242,114,0,0.5)',
+    name_en: 'Ediacaran Period',
+    summary_en: "The Ediacaran saw several periods of widespread glaciers, as well as the emergence of newly-complex forms of multicellular life.",
+    time_en: '635 – 539 Mya'
+  },
+  cryogenian: {
+    height: 18.4,
+    color: 'RGBA(242,114,0,0.75)',
+    name_en: 'Cryogenian Period',
+    summary_en: 'Scientists have nicknamed the Cryogenian "snowball Earth" due to its worldwide glaciers.',
+    time_en: '720 – 635 Mya'
+  },
+  tonian: {
+    height: 60.7,
+    color: 'RGBA(242,114,0,1)',
+    name_en: 'Tonian Period',
+    summary_en: 'The first animals (as opposed to bacteria or fungi) appeared during the Tonian, which also saw the breakup of the Rodinia supercontinent.',
+    time_en: '1000 – 720 Mya'
+  },
+  stenian: {
+    height: 33.3,
+    color: 'RGBA(242,114,0,0.5)',
+    name_en: 'Stenian Period',
+    summary_en: "During the Stenian, the supercontinent of Rodinia formed.",
+    time_en: '1200 – 1000 Mya'
+  },
+  ectasian: {
+    height: 33.3,
+    color: 'RGBA(242,114,0,0.75)',
+    name_en: 'Ectasian Period',
+    summary_en: "Little is known about this period, but fossilized evidence of a species of red algae shows the first evidence of modern reproduction in any life.",
+    time_en: '1400 – 1200 Mya'
+  },
+  calymmian: {
+    height: 33.3,
+    color: 'RGBA(242,114,0,1)',
+    name_en: 'Calymmian Period',
+    summary_en: "During the Calymmian, the supercontinent of Columbia began to drift apart.",
+    time_en: '1600 – 1400 Mya'
+  },
+  statherian: {
+    height: 22.2,
+    color: 'RGBA(242,114,0,0.4)',
+    name_en: 'Statherian Period',
+    summary_en: "Little is known about the Statherian Period.",
+    time_en: '1800 – 1600 Mya'
+  },
+  orosirian: {
+    height: 27.8,
+    color: 'RGBA(242,114,0,0.6)',
+    name_en: 'Orosirian Period',
+    summary_en: "During the Orosirian, the supercontinent of Columbia formed and Earth suffered two of the largest asteroid impacts since the early days of the solar system.",
+    time_en: '2050 – 1800 Mya'
+  },
+  rhyacian: {
+    height: 27.8,
+    color: 'RGBA(242,114,0,0.8)',
+    name_en: 'Rhyacian Period',
+    summary_en: "During the Rhyacian, Earth was covered by glaciers for around 100 million years. The first life large enough to be visible to the unaided eye evolved during this period.",
+    time_en: '2300 – 2050 Mya'
+  },
+  siderian: {
+    height: 22.2,
+    color: 'RGBA(242,114,0,1)',
+    name_en: 'Siderian Period',
+    summary_en: 'During the Siderian, the "Great Oxygenation Event" occured, in which cyanobacteria began producing oxygen through photosynthesis. Over the next 500 million years, the amount of oxygen in Earth\'s atmosphere would increase dramatically.',
+    time_en: '2500 – 2300 Mya'
+  },
+  
 }
 
 function expandEon(eon) {
@@ -163,6 +309,11 @@ function collapseEon(eon) {
   Array.from(eon.querySelector('.era-container').children).forEach((el) => {
     el.classList.remove('era-collapsed')
     el.classList.remove('era-expanded')
+
+    Array.from(el.querySelector('.period-container').children).forEach((el2) => {
+      el2.classList.remove('period-collapsed')
+      el2.classList.remove('period-expanded')
+    })
   })
   eon.querySelector('.eon-summary').classList.add('collapsed')
   eon.querySelector('.era-container').classList.remove('era-container-expanded')
@@ -184,6 +335,11 @@ function expandEra(era) {
   era.classList.add('era-expanded')
   era.closest('.eon').querySelector('.eon-summary').classList.add('collapsed')
   era.closest('.eon').querySelector('.era-container').classList.add('era-container-expanded')
+  Array.from(era.querySelector('.period-container').children).forEach((el) => {
+    el.classList.remove('period-collapsed')
+    el.classList.remove('period-expanded')
+  })
+  era.querySelector('.period-container').classList.remove('period-container-expanded')
   era.querySelector('.era-summary').classList.remove('collapsed')
 }
 
@@ -194,6 +350,12 @@ function collapseEra(era) {
     e.classList.remove('era-collapsed')
     e.classList.remove('era-expanded')
   }
+
+  Array.from(era.querySelector('.period-container').children).forEach((el) => {
+    el.classList.remove('period-collapsed')
+    el.classList.remove('period-expanded')
+  })
+
   era.closest('.eon').querySelector('.eon-summary').classList.add('collapsed')
   era.closest('.era-container').classList.remove('era-container-expanded')
   era.closest('.eon').querySelector('.eon-summary').classList.remove('collapsed')
@@ -254,11 +416,21 @@ for (const key of Object.keys(eons)) {
   
     const title = document.createElement('div')
     title.classList = 'era-title'
+    if (eraDef.titleSize === 'small') {
+      title.classList.add('era-title-small')
+    } else if (eraDef.titleSize === 'medium') {
+      title.classList.add('era-title-medium')
+    }
     title.innerHTML = eraDef.name_en
     div.appendChild(title)
   
     const time = document.createElement('div')
     time.classList = 'era-time'
+    if (eraDef.titleSize === 'small') {
+      time.classList.add('era-time-small')
+    } else if (eraDef.titleSize === 'medium') {
+      time.classList.add('era-time-medium')
+    }
     time.innerHTML = eraDef.time_en
     div.appendChild(time)
   
@@ -267,41 +439,47 @@ for (const key of Object.keys(eons)) {
     summary.innerHTML = eraDef.summary_en
     div.appendChild(summary)
 
-    const periodContainer = document.createElement('div')
-    periodContainer.classList = 'period-container'
-    div.appendChild(periodContainer)
+    if (eraDef.periods.length > 0) {
+      const periodContainer = document.createElement('div')
+      periodContainer.classList = 'period-container'
+      div.appendChild(periodContainer)
 
-    // Periods
-    eraDef.periods.forEach((period) => {
-      const periodDef = periods[period]
+      // Periods
+      eraDef.periods.forEach((period) => {
+        const periodDef = periods[period]
 
-      const div = document.createElement('div')
-      div.classList = 'period'
-      div.style.backgroundColor = periodDef.color
-      div.style.height = String(periodDef.height) + '%'
-      periodContainer.appendChild(div)
-    
-      const title = document.createElement('div')
-      title.classList = 'period-title'
-      if (period === 'quaternary') {
-        title.style.fontSize = '1.5vh'
-      }
-      title.innerHTML = periodDef.name_en
-      div.appendChild(title)
-    
-      const time = document.createElement('div')
-      time.classList = 'period-time'
-      if (period === 'quaternary') {
-        time.style.fontSize = '1vh'
-      }
-      time.innerHTML = periodDef.time_en
-      div.appendChild(time)
-    
-      const summary = document.createElement('div')
-      summary.classList = 'period-summary collapsed'
-      summary.innerHTML = periodDef.summary_en
-      div.appendChild(summary)
-    })
+        const div = document.createElement('div')
+        div.classList = 'period'
+        div.style.backgroundColor = periodDef.color
+        div.style.height = String(periodDef.height) + '%'
+        periodContainer.appendChild(div)
+      
+        const title = document.createElement('div')
+        title.classList = 'period-title'
+        if (periodDef.titleSize === 'small') {
+          title.classList.add('period-title-small')
+        } else if (periodDef.titleSize === 'medium') {
+          title.classList.add('period-title-medium')
+        }
+        title.innerHTML = periodDef.name_en
+        div.appendChild(title)
+      
+        const time = document.createElement('div')
+        time.classList = 'period-time'
+        if (periodDef.timeSize === 'small') {
+          time.classList.add('period-time-small')
+        } else if (periodDef.timeSize === 'medium') {
+          time.classList.add('period-time-medium')
+        } 
+        time.innerHTML = periodDef.time_en
+        div.appendChild(time)
+      
+        const summary = document.createElement('div')
+        summary.classList = 'period-summary collapsed'
+        summary.innerHTML = periodDef.summary_en
+        div.appendChild(summary)
+      })
+    }
   })
 }
 
