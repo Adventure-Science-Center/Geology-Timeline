@@ -335,11 +335,15 @@ function expandEra(era) {
   era.classList.add('era-expanded')
   era.closest('.eon').querySelector('.eon-summary').classList.add('collapsed')
   era.closest('.eon').querySelector('.era-container').classList.add('era-container-expanded')
-  Array.from(era.querySelector('.period-container').children).forEach((el) => {
-    el.classList.remove('period-collapsed')
-    el.classList.remove('period-expanded')
-  })
-  era.querySelector('.period-container').classList.remove('period-container-expanded')
+  try {
+    Array.from(era.querySelector('.period-container').children).forEach((el) => {
+      el.classList.remove('period-collapsed')
+      el.classList.remove('period-expanded')
+    })
+    era.querySelector('.period-container').classList.remove('period-container-expanded')
+  } catch (e) {
+    console.log('No periods to show')
+  }
   era.querySelector('.era-summary').classList.remove('collapsed')
 }
 
@@ -504,8 +508,8 @@ document.addEventListener('click', (event) => {
   }
 })
 
-// exCommon.configureApp({
-//   name: 'other',
-//   loadDefinition: loadDefinition,
-//   parseUpdate: parseUpdate
-//   })
+exCommon.configureApp({
+  name: 'other',
+  loadDefinition: loadDefinition,
+  parseUpdate: parseUpdate
+  })

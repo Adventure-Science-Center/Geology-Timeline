@@ -112,6 +112,12 @@ html, body {
 .era-container-expanded {
     height: 81%!important;
 }
+.era-container-expanded.eras-3 {
+    height: 84.5%!important;
+}
+.era-container-expanded.eras-4 {
+
+}
 .era-expanded {
     height: 80%!important;
 }
