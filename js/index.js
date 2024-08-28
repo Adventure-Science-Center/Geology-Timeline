@@ -1,5 +1,8 @@
 import * as exCommon from './exhibitera_app_common.js'
 
+const eraColors = ['#983567E6', '#8E2158E6',  '#830B47E6', '#700A3DE6']
+const periodColors = ['#F78B2CE6', '#F28321E6', '#EC7A16E6', '#E6720BE6', '#E36E06E6', '#E06900E6']
+
 const eons = {
   archean: {
     eras: ['eoarchean', 'paleoarchean', 'mesoarchean', 'neoarchean'],
@@ -44,7 +47,7 @@ const eras = {
   },
   mesoarchean: {
     height: 26.1,
-    color: 'RGBA(151,14,83,0.6)',
+    color: 'RGBA(151,14,83,0.9)',
     name_en: 'Mesoarchean Era',
     periods: [],
     summary_en: 'The oldest evidence ofplate tectonics, an important geologic process, dates to the Mesoarchean.',
@@ -68,7 +71,7 @@ const eras = {
   },
   neoarchean: {
     height: 19.6,
-    color: 'RGBA(151,14,83,0.4)',
+    color: 'RGBA(151,14,83,0.85)',
     name_en: 'Neoarchean Era',
     periods: [],
     summary_en: "The Neoarchean was marked by the growing complexity of living organisms and the evolution of photosynthesis.",
@@ -84,7 +87,7 @@ const eras = {
   },
   paleoarchean: {
     height: 26.1,  
-    color: 'RGBA(151,14,83,0.8)',
+    color: 'RGBA(151,14,83,0.95)',
     name_en: 'Paleoarchean Era',
     periods: [],
     summary_en: "The oldest confirmed evidence for life on Earth dates from the Paleoarchean in the form of fossilized bacterial mats.",
@@ -409,12 +412,14 @@ for (const key of Object.keys(eons)) {
   const eon = eons[key]
 
   // Eras
+  let i = 0;
   eon.eras.reverse().forEach((era) => {
     const eraDef = eras[era]
 
     const div = document.createElement('div')
     div.classList = 'era'
-    div.style.backgroundColor = eraDef.color
+    div.style.backgroundColor = eraColors[i]
+    i+= 1;
     div.style.height = String(eraDef.height) + '%'
     document.getElementById(eon.key + 'Eras').appendChild(div)
   
@@ -449,12 +454,14 @@ for (const key of Object.keys(eons)) {
       div.appendChild(periodContainer)
 
       // Periods
+      let j = 0
       eraDef.periods.forEach((period) => {
         const periodDef = periods[period]
 
         const div = document.createElement('div')
         div.classList = 'period'
-        div.style.backgroundColor = periodDef.color
+        div.style.backgroundColor = periodColors[j]
+        j += 1;
         div.style.height = String(periodDef.height) + '%'
         periodContainer.appendChild(div)
       

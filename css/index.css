@@ -1,6 +1,6 @@
 html, body {
     overflow: hidden;
-    background-color: black;
+    background-color: gray;
 }
 .collapsed {
     height: 0%!important;
@@ -15,9 +15,13 @@ html, body {
     flex-direction: column;
     align-items: center;
     transition: 1s;
+    border-top: 0.2vh solid rgb(203, 197, 197);
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 .eon-collapsed {
     height: 7%!important;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 .eon-collapsed .eon-title {
     font-size: 3vh;
@@ -34,6 +38,7 @@ html, body {
 }
 .eon-expanded {
     height: calc(95vh - 21%)!important;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 .eon-expanded .eon-summary {
     opacity: 1;
@@ -258,7 +263,12 @@ html, body {
 
 #archean {
     height: 33.5%;
-    background-color: #0076BA;
+    /* background-color: #0076BA; */
+
+    background-image: url('../images/archaen.jpg');
+    background-size: cover;
+    background-position: center;
+
 }
 #eonContainer {
     display: flex;
@@ -269,18 +279,28 @@ html, body {
 }
 #hadean {
     height: 11.7%;
-    background-color: #004D80;
+    /* background-color: #004D80; */
+    background-image: url('../images/hadean.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 0.2vh solid rgb(203, 197, 197);
 }
 #hadeanEras {
     display: none;
 }
 #phanerozoic {
     height: 11.8%;
-    background-color: #56C1FF;
+    /* background-color: #56C1FF; */
+    background-image: url('../images/phanerozoic.jpg');
+    background-size: cover;
+    background-position: center;
 }
 #proterozoic {
     height: 42.9%;
-    background-color: #00A2FF;
+    /* background-color: #00A2FF; */
+    background-image: url('../images/proterozoic.jpg');
+    background-size: cover;
+    background-position: center;
 }
 #toolbar {
     width: 100vw;
