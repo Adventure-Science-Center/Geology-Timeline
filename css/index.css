@@ -288,6 +288,9 @@ html, body {
 #hadeanEras {
     display: none;
 }
+#langSwitchButton {
+    font-size: 1.8vh;
+}
 #phanerozoic {
     height: 11.8%;
     /* background-color: #56C1FF; */
