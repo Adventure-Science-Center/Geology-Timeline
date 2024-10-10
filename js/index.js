@@ -525,7 +525,6 @@ function localize(lang) {
 
 function expandEon(eon) {
   // Expand the given eon
-  console.log(eon)
   if (eon.classList.contains('eon-expanded')) {
     collapseEon(eon)
     return
@@ -655,6 +654,19 @@ function parseUpdate (update) {
   // A function to respond to commands from Hub.
 }
 
+function resetInactivityTimer() {
+  clearTimeout(inactivityTimer)
+  inactivityTimer = setTimeout(() => {
+    // First, collapse to Eon view
+    for (const e of Array.from(document.getElementsByClassName('eon'))) {
+      e.classList.remove('eon-collapsed')
+      e.classList.remove('eon-expanded')
+    }
+    // Then, make sure we are English
+    setTimeout(() => {localize('en')}, 1000)
+  }, 5000)
+}
+
 document.getElementById('langSwitchButton').addEventListener('click', (ev) => {
   if (ev.target.innerHTML === 'English') {
     localize('en')
@@ -666,6 +678,7 @@ document.getElementById('langSwitchButton').addEventListener('click', (ev) => {
 // Add event listeners
 
 document.addEventListener('click', (event) => {
+  resetInactivityTimer()
   if (event.target.classList.contains('eon-time') || 
       event.target.classList.contains('eon-title') ||
       event.target.classList.contains('eon-summary') || 
@@ -685,6 +698,8 @@ document.addEventListener('click', (event) => {
 })
 
 localize('en')
+let inactivityTimer = null
+resetInactivityTimer()
 
 // exCommon.configureApp({
 //   name: 'other',
