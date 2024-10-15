@@ -89,7 +89,7 @@ const eras = {
     name_es: 'Era Mesoproterozoica',
     periods: ['stenian', 'ectasian', 'calymmian'],
     summary_en: "The Mesoproterozoic is the first era for which a comprehensive geologic record has been found. The continents we know today began to emerge, although their shapes were very different.",
-    summary_es: 'El Mesoproterozoico es la primera era de la que se ha encontrado un registro geológico completo. Los continentes que conocemos hoy comenzaron a surgir durante esta era, aunque sus formas eran muy diferentes.',
+    summary_es: '<small>El Mesoproterozoico es la primera era de la que se ha encontrado un registro geológico completo. Los continentes que conocemos hoy comenzaron a surgir durante esta era, aunque sus formas eran muy diferentes.</small>',
     time_en: '1600 – 1000 Mya',
     time_es: 'Entre hace 1600 – 1000 Ma'
   },
@@ -664,7 +664,7 @@ function resetInactivityTimer() {
     }
     // Then, make sure we are English
     setTimeout(() => {localize('en')}, 1000)
-  }, 5000)
+  }, 30000)
 }
 
 document.getElementById('langSwitchButton').addEventListener('click', (ev) => {

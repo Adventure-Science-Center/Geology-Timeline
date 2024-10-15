@@ -1,3 +1,18 @@
+@font-face {
+    font-family: Futura-PT-Book;
+    src: url("../fonts/futura-pt-book.otf");
+  }
+
+  @font-face {
+    font-family: Futura-PT-Light;
+    src: url("../fonts/FuturaPTLight[78].otf");
+  }
+
+  @font-face {
+    font-family: Futura-PT-Heavy;
+    src: url("../fonts/futura-pt-heavy.otf");
+  }
+
 html, body {
     overflow: hidden;
     background-color: gray;
@@ -17,7 +32,7 @@ html, body {
     transition: 1s;
     border-top: 0.2vh solid rgb(203, 197, 197);
     background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 .eon-collapsed {
     height: 7%!important;
@@ -68,6 +83,7 @@ html, body {
     margin-top: 1vh;
     overflow: hidden;
     transition: 1s;
+    font-family: Futura-PT-Book;
 }
 .eon-time {
     color: white;
@@ -76,6 +92,7 @@ html, body {
     text-align: center;
     pointer-events: auto;
     transition: 1s;
+    font-family: Futura-PT-Book;
 }
 .eon-title {
     color: white;
@@ -83,6 +100,7 @@ html, body {
     text-align: center;
     padding-top: 1vh;
     transition: 1s;
+    font-family: Futura-PT-Heavy;
 }
 .era {
     display: flex;
@@ -153,12 +171,14 @@ html, body {
     padding: 1vh;
     margin-top: 1vh;
     overflow: hidden;
+    font-family: Futura-PT-Book;
 }
 .era-time {
     color: white;
     font-size: 1.5vh;
     text-align: center;
     transition: 1s;
+    font-family: Futura-PT-Book;
 }
 .era-time.era-time-medium { 
     font-size: 1.25vh;
@@ -168,6 +188,7 @@ html, body {
     font-size: 3vh;
     text-align: center;
     transition: 1s;
+    font-family: Futura-PT-Heavy;
 }
 .era-title.era-title-medium {
     font-size: 2.5vh;
@@ -235,12 +256,14 @@ html, body {
     padding: 1vh;
     margin-top: 1vh;
     overflow: hidden;
+    font-family: Futura-PT-Book;
 }
 .period-time {
     color: white;
     font-size: 1.3vh;
     text-align: center;
     transition: 1s;
+    font-family: Futura-PT-Book;
 }
 .period-time.period-time-medium { 
     font-size: 1.15vh;
@@ -253,6 +276,7 @@ html, body {
     font-size: 2.5vh;
     text-align: center;
     transition: 1s;
+    font-family: Futura-PT-Heavy;
 }
 .period-title.period-title-medium {
     font-size: 2vh;
@@ -290,6 +314,7 @@ html, body {
 }
 #langSwitchButton {
     font-size: 1.8vh;
+    font-family: Futura-PT-Book;
 }
 #phanerozoic {
     height: 11.8%;
