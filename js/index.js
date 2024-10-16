@@ -701,8 +701,8 @@ localize('en')
 let inactivityTimer = null
 resetInactivityTimer()
 
-// exCommon.configureApp({
-//   name: 'other',
-//   loadDefinition: loadDefinition,
-//   parseUpdate: parseUpdate
-//   })
+exCommon.configureApp({
+  name: 'other',
+  loadDefinition: loadDefinition,
+  parseUpdate: parseUpdate
+  })
