@@ -1,5 +1,3 @@
-import * as exCommon from './exhibitera_app_common.js'
-
 const eraColors = ['#983567E6', '#8E2158E6',  '#830B47E6', '#700A3DE6']
 const periodColors = ['#F78B2CE6', '#F28321E6', '#EC7A16E6', '#E6720BE6', '#E36E06E6', '#E06900E6']
 
@@ -700,9 +698,3 @@ document.addEventListener('click', (event) => {
 localize('en')
 let inactivityTimer = null
 resetInactivityTimer()
-
-exCommon.configureApp({
-  name: 'other',
-  loadDefinition: loadDefinition,
-  parseUpdate: parseUpdate
-  })
