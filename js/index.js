@@ -15,6 +15,7 @@ const eons = {
   hadean: {
     eras: [],
     key: 'hadean',
+    imageUrl: '/images/theia.jpg',
     name_en: 'Hadean Eon',
     name_es: 'Eón Hádico',
     summary_en: "During the Hadean, Earth's surface cooled after its initial formation. The Moon was formed after a massive collision between Earth and a Mars-sized planet.",
@@ -35,6 +36,7 @@ const eons = {
   proterozoic: {
     eras: ['paleoproterozoic', 'mesoproterozoic', 'neoproterozoic'],
     key: 'proterozoic',
+    imageUrl: '/images/cyanobacteria.jpg',
     name_en: 'Proterozoic Eon',
     name_es: 'Eón Proterozoico',
     summary_en: "During the Proterozoic, oxygen became a major component of Earth’s atmosphere and multicellular life began to become common.",
@@ -48,6 +50,8 @@ const eras = {
   cenozoic: {
     height: 12.2,
     color: 'RGBA(151,14,83,0.5)',
+    imageUrl: '/images/flock.jpg',
+    credit: 'Image credit: Faisal Akram',
     name_en: 'Cenozoic Era',
     name_es: 'Era Cenozoica',
     periods: ['quaternary', 'neogene', 'paleogene'],
@@ -105,6 +109,7 @@ const eras = {
   neoarchean: {
     height: 19.6,
     color: 'RGBA(151,14,83,0.85)',
+    imageUrl: '/images/photosynthesis.jpeg',
     name_en: 'Neoarchean Era',
     name_es: 'Era Neoarcaica',
     periods: [],
@@ -148,6 +153,7 @@ const eras = {
   },
   paleozoic: {
     height: 53.3,
+    imageUrl: '/images/trilobite.jpg',
     color: 'RGBA(151,14,83,1)',
     name_en: 'Paleozoic Era',
     name_es: 'Era Paleozoica',
@@ -163,6 +169,8 @@ const periods = {
   quaternary: {
     height: 3.9,
     color: 'RGBA(242,114,0,0.5)',
+    imageUrl: '/images/sprinters.jpg',
+    credit: 'Image credit: Darren Wilkinson',
     name_en: 'Quaternary Period',
     name_es: 'Periodo Cuaternario',
     summary_en: "The Quaternary is Earth's current geologic period, marked by periodic ice ages. It's most notable for the emergence of humans.",
@@ -421,9 +429,46 @@ function localize(lang) {
     eonDiv.appendChild(time)
   
     const summary = document.createElement('div')
-    summary.classList = 'eon-summary collapsed'
-    summary.innerHTML = eon['summary_' + lang]
+    summary.classList = 'eon-summary summary-container collapsed'
     eonDiv.appendChild(summary)
+
+
+    if (eon.imageUrl) {
+        const imgWrapper = document.createElement('div');
+        imgWrapper.classList.add('image-wrapper');
+        
+        const img = document.createElement('img');
+        img.src = eon.imageUrl;
+        img.classList.add('summary-image');
+        imgWrapper.appendChild(img);
+
+        if (eon.credit) {
+            // The "i" button
+            const infoBtn = document.createElement('div');
+            infoBtn.innerHTML = 'i';
+            infoBtn.classList.add('credit-button');
+            
+            // The credit text element
+            const creditLabel = document.createElement('div');
+            creditLabel.classList.add('credit-text', 'hidden');
+            creditLabel.innerText = eon.credit;
+
+            infoBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent triggering the container's click
+                creditLabel.classList.toggle('hidden');
+            });
+
+            imgWrapper.appendChild(infoBtn);
+            imgWrapper.appendChild(creditLabel);
+        }
+        summary.appendChild(imgWrapper);
+    }
+
+    const textDiv = document.createElement('div')
+    textDiv.classList.add('summary-text')
+    textDiv.innerHTML = eon['summary_' + lang]
+    summary.appendChild(textDiv)
+
 
     const eraContainer = document.createElement('div')
     eraContainer.classList = 'era-container'
@@ -463,9 +508,44 @@ function localize(lang) {
       div.appendChild(time)
     
       const summary = document.createElement('div')
-      summary.classList = 'era-summary collapsed'
-      summary.innerHTML = eraDef['summary_' + lang]
+      summary.classList = 'era-summary summary-container collapsed'
       div.appendChild(summary)
+
+      if (eraDef.imageUrl) {
+          const imgWrapper = document.createElement('div');
+          imgWrapper.classList.add('image-wrapper');
+          
+          const img = document.createElement('img');
+          img.src = eraDef.imageUrl;
+          img.classList.add('summary-image');
+          imgWrapper.appendChild(img);
+
+          if (eraDef.credit) {
+              // The "i" button
+              const infoBtn = document.createElement('div');
+              infoBtn.innerHTML = 'i';
+              infoBtn.classList.add('credit-button');
+              
+              // The credit text element
+              const creditLabel = document.createElement('div');
+              creditLabel.classList.add('credit-text', 'hidden');
+              creditLabel.innerText = eraDef.credit;
+
+              infoBtn.addEventListener('click', (e) => {
+                  e.stopPropagation(); // Prevent triggering the container's click
+                  creditLabel.classList.toggle('hidden');
+              });
+
+              imgWrapper.appendChild(infoBtn);
+              imgWrapper.appendChild(creditLabel);
+          }
+          summary.appendChild(imgWrapper);
+      }
+
+      const textDiv = document.createElement('div')
+      textDiv.classList.add('summary-text')
+      textDiv.innerHTML = eraDef['summary_' + lang]
+      summary.appendChild(textDiv)
 
       if (eraDef.periods.length > 0) {
         const periodContainer = document.createElement('div')
@@ -505,9 +585,44 @@ function localize(lang) {
           div.appendChild(time)
         
           const summary = document.createElement('div')
-          summary.classList = 'period-summary collapsed'
-          summary.innerHTML = periodDef['summary_' + lang]
+          summary.classList = 'period-summary summary-container collapsed'
           div.appendChild(summary)
+
+          if (periodDef.imageUrl) {
+              const imgWrapper = document.createElement('div');
+              imgWrapper.classList.add('image-wrapper');
+              
+              const img = document.createElement('img');
+              img.src = periodDef.imageUrl;
+              img.classList.add('summary-image');
+              imgWrapper.appendChild(img);
+
+              if (periodDef.credit) {
+                  // The "i" button
+                  const infoBtn = document.createElement('div');
+                  infoBtn.innerHTML = 'i';
+                  infoBtn.classList.add('credit-button');
+                  
+                  // The credit text element
+                  const creditLabel = document.createElement('div');
+                  creditLabel.classList.add('credit-text', 'hidden');
+                  creditLabel.innerText = periodDef.credit;
+
+                  infoBtn.addEventListener('click', (e) => {
+                      e.stopPropagation(); // Prevent triggering the container's click
+                      creditLabel.classList.toggle('hidden');
+                  });
+
+                  imgWrapper.appendChild(infoBtn);
+                  imgWrapper.appendChild(creditLabel);
+              }
+              summary.appendChild(imgWrapper);
+          }
+
+          const textDiv = document.createElement('div')
+          textDiv.classList.add('summary-text')
+          textDiv.innerHTML = periodDef['summary_' + lang]
+          summary.appendChild(textDiv)
         })
       }
     })
@@ -603,10 +718,10 @@ function collapseEra(era) {
     e.classList.remove('era-expanded')
   }
 
-  Array.from(era.querySelector('.period-container').children).forEach((el) => {
-    el.classList.remove('period-collapsed')
+  for (const el of era.querySelector('.period-container')?.children ?? []) {
+     el.classList.remove('period-collapsed')
     el.classList.remove('period-expanded')
-  })
+  }
 
   era.closest('.eon').querySelector('.eon-summary').classList.add('collapsed')
   era.closest('.era-container').classList.remove('era-container-expanded')
@@ -676,6 +791,9 @@ document.getElementById('langSwitchButton').addEventListener('click', (ev) => {
 // Add event listeners
 
 document.addEventListener('click', (event) => {
+  if (!event.target.classList.contains('credit-button')) {
+    document.querySelectorAll('.credit-text').forEach(el => el.classList.add('hidden'));
+  }
   resetInactivityTimer()
   if (event.target.classList.contains('eon-time') || 
       event.target.classList.contains('eon-title') ||

@@ -285,6 +285,96 @@ html, body {
     font-size: 1.5vh;
 }
 
+/* Layout for summary sections with images and text */
+/* Layout for summary sections with images and text */
+.summary-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* Stretches the image to touch the top and bottom edges */
+    padding: 0;           /* Removes parent padding so the image touches the left edge */
+    gap: 0;               /* Spacing is now handled by the text padding */
+}
+
+.summary-image {
+    max-width: 150px;     
+    width: 35%;           /* Gives the image a nice proportional width */
+    height: auto;         /* Allows the flex container to dictate the vertical height */
+    object-fit: cover;    /* Fills the space completely without distorting the image */
+    
+    /* Notice we removed border-radius. The parent container's 
+       "overflow: hidden" will naturally round the outside corners! */
+}
+
+.summary-text {
+    flex: 1;
+    /* Top, right, bottom gets the original 1vh padding. 
+       Left gets 15px to act as a gap between the image and text */
+    padding: 1vh 1vh 1vh 15px; 
+    display: flex;
+    align-items: center;  /* Keeps your text vertically centered */
+}
+
+/* Ensure existing special text formatting (like small) still works */
+.summary-text small {
+    display: inline;
+}
+
+/* Container for image and credit UI */
+.image-wrapper {
+    position: relative;
+    width: 35%;
+    max-width: 150px;
+    display: flex;
+}
+
+/* Full-bleed image within the wrapper */
+.image-wrapper .summary-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* The "i" button */
+.credit-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: serif;
+    font-style: italic;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* The credit text overlay */
+.credit-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    pointer-events: none; /* Allows clicks to pass through if needed */
+    transition: opacity 0.3s;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
 #archean {
     height: 33.5%;
     /* background-color: #0076BA; */
