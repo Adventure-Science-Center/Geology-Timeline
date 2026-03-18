@@ -5,6 +5,7 @@ const eons = {
   archean: {
     eras: ['eoarchean', 'paleoarchean', 'mesoarchean', 'neoarchean'],
     key: 'archean',
+    image: 'Champagne_vent_white_smokers.jpg',
     name_en: 'Archean Eon',
     name_es: 'Eón Arcaico',
     summary_en: "During the Archean, the solar system finished its formation, and the first evidence of life is preserved.",
@@ -15,7 +16,7 @@ const eons = {
   hadean: {
     eras: [],
     key: 'hadean',
-    imageUrl: '/images/theia.jpg',
+    image: 'theia.jpg',
     name_en: 'Hadean Eon',
     name_es: 'Eón Hádico',
     summary_en: "During the Hadean, Earth's surface cooled after its initial formation. The Moon was formed after a massive collision between Earth and a Mars-sized planet.",
@@ -26,6 +27,7 @@ const eons = {
   phanerozoic: {
     eras: ['paleozoic', 'mesozoic', 'cenozoic'],
     key: 'phanerozoic',
+    image: 'Tursiops_truncatus_01.jpg',
     name_en: 'Phanerozoic Eon',
     name_es: 'Eón Fanerozoico',
     summary_en: 'The Phanerozoic is our present geologic eon. During this time, diverse and complex life has spread across Earth, including the evolution of human beings.',
@@ -36,7 +38,7 @@ const eons = {
   proterozoic: {
     eras: ['paleoproterozoic', 'mesoproterozoic', 'neoproterozoic'],
     key: 'proterozoic',
-    imageUrl: '/images/cyanobacteria.jpg',
+    image: 'cyanobacteria.jpg',
     name_en: 'Proterozoic Eon',
     name_es: 'Eón Proterozoico',
     summary_en: "During the Proterozoic, oxygen became a major component of Earth’s atmosphere and multicellular life began to become common.",
@@ -50,7 +52,7 @@ const eras = {
   cenozoic: {
     height: 12.2,
     color: 'RGBA(151,14,83,0.5)',
-    imageUrl: '/images/flock.jpg',
+    image: 'flock.jpg',
     credit: 'Faisal Akram',
     name_en: 'Cenozoic Era',
     name_es: 'Era Cenozoica',
@@ -65,6 +67,7 @@ const eras = {
   eoarchean: {
     height: 28.2,
     color: 'RGBA(151,14,83,1)',
+    image: 'Nested_Craters_on_Mars.jpg',
     name_en: 'Eoarchean Era',
     name_es: "Era Eoarcaica",
     periods: [],
@@ -76,6 +79,8 @@ const eras = {
   mesoarchean: {
     height: 26.1,
     color: 'RGBA(151,14,83,0.9)',
+    image: 'Stromboli_Eruption.jpg',
+    credit: 'Wolfgang Beyer',
     name_en: 'Mesoarchean Era',
     name_es: 'Era Mesoarcaica',
     periods: [],
@@ -86,11 +91,13 @@ const eras = {
   },
   mesoproterozoic: {
     height: 30.6,
+    image: 'pyrite.jpg',
+    credit: 'James St. John',
     color: 'RGBA(151,14,83,0.75)',
     name_en: 'Mesoproterozoic Era',
     name_es: 'Era Mesoproterozoica',
     periods: ['calymmian', 'ectasian', 'stenian'],
-    summary_en: "The Mesoproterozoic is the first era for which a comprehensive geologic record has been found. The continents we know today began to emerge, although their shapes were very different.",
+    summary_en: "<small>The Mesoproterozoic is the first era for which a comprehensive geologic record has been found. The continents we know today began to emerge, although their shapes were very different.</small>",
     summary_es: '<small>El Mesoproterozoico es la primera era de la que se ha encontrado un registro geológico completo. Los continentes que conocemos hoy comenzaron a surgir durante esta era, aunque sus formas eran muy diferentes.</small>',
     time_en: '1600 – 1000 Mya',
     time_es: 'Entre hace 1600 – 1000 Ma'
@@ -98,6 +105,8 @@ const eras = {
   mesozoic: {
     height: 34.5,
     color: 'RGBA(151,14,83,0.75)',
+    image: 'Scipionyx_samniticus_-_Foto_Giovanni_DallOrto_22-Apr-2007a.jpg',
+    credit: "Giovanni Dall'Orto",
     name_en: 'Mesozoic Era',
     name_es: 'Era Mesozoica',
     periods: ['triassic', 'jurassic', 'cretaceous'],
@@ -109,7 +118,7 @@ const eras = {
   neoarchean: {
     height: 19.6,
     color: 'RGBA(151,14,83,0.85)',
-    imageUrl: '/images/photosynthesis.jpeg',
+    image: 'photosynthesis.jpeg',
     name_en: 'Neoarchean Era',
     name_es: 'Era Neoarcaica',
     periods: [],
@@ -121,6 +130,7 @@ const eras = {
   neoproterozoic: {
     height: 23.5,
     color: 'RGBA(151,14,83,0.5)',
+    image: 'Charnia_Spun.jpg',
     name_en: 'Neoproterozoic Era',
     name_es: 'Era Neoproterozoica',
     periods: ['tonian', 'cryogenian', 'ediacaran'],
@@ -132,6 +142,8 @@ const eras = {
   paleoarchean: {
     height: 26.1,  
     color: 'RGBA(151,14,83,0.95)',
+    image: 'Stromatolites_in_Sharkbay.jpg',
+    credit: 'Paul Harrison',
     name_en: 'Paleoarchean Era',
     name_es: 'Era Paleoarcaica',
     periods: [],
@@ -143,17 +155,19 @@ const eras = {
   paleoproterozoic: {
     height: 45.9,
     color: 'RGBA(151,14,83,1)',
+    image: 'CSIRO_ScienceImage_4203.jpg',
+    credit: 'Willem van Aken, CSIRO',
     name_en: 'Paleoproterozoic Era',
     name_es: 'Era Paleoproterozoica',
     periods: ['siderian', 'rhyacian', 'orosirian', 'statherian'],
-    summary_en: "The Paleoproterozoic saw the formation of the first continents. The rise of oxygen-producing cyanobacteria led to a dramatic increase of oxygen in the atmosphere, paving the way for life as we know it.",
-    summary_es: "La formación de los primeros continentes se dio durante el Paleoproterozoico. El surgimiento de las cianobacterias productoras de oxígeno condujo a un aumento dramático en el oxígeno de la atmósfera, allanando el camino para la vida tal como la conocemos.",
+    summary_en: "<small>The Paleoproterozoic saw the formation of the first continents. The rise of oxygen-producing cyanobacteria led to a dramatic increase of oxygen in the atmosphere, paving the way for life as we know it.</small>",
+    summary_es: "<small>La formación de los primeros continentes se dio durante el Paleoproterozoico. El surgimiento de las cianobacterias productoras de oxígeno condujo a un aumento dramático en el oxígeno de la atmósfera, allanando el camino para la vida tal como la conocemos.</small>",
     time_en: '2500 – 1600 Mya',
     time_es: 'Entre hace 2500 – 1600 Ma'
   },
   paleozoic: {
     height: 53.3,
-    imageUrl: '/images/trilobite.jpg',
+    image: 'trilobite.jpg',
     color: 'RGBA(151,14,83,1)',
     name_en: 'Paleozoic Era',
     name_es: 'Era Paleozoica',
@@ -169,7 +183,7 @@ const periods = {
   quaternary: {
     height: 3.9,
     color: 'RGBA(242,114,0,0.5)',
-    imageUrl: '/images/sprinters.jpg',
+    image: 'sprinters.jpg',
     credit: 'Darren Wilkinson',
     name_en: 'Quaternary Period',
     name_es: 'Periodo Cuaternario',
@@ -183,6 +197,7 @@ const periods = {
   neogene: {
     height: 30.4,
     color: 'RGBA(242,114,0,0.75)',
+    image: 'Crotalus_cerastes_mesquite_springs_CA-2.jpg',
     name_en: 'Neogene Period',
     name_es: 'Periodo Neógeno',
     summary_en: "During the Neogene, North and South America became connected, and birds and mammals continued to evolve.",
@@ -193,6 +208,8 @@ const periods = {
   paleogene: {
     height: 65.2,
     color: 'RGBA(242,114,0,1)',
+    image: 'Brown_Bluff-2016-Tabarin_Peninsula–Gentoo_penguin.jpg',
+    credit: 'Andrew Shiva',
     name_en: 'Paleogene Period',
     name_es: 'Periodo Paleógeno',
     summary_en: "After the extinction of the dinosaurs, birds and mammals began to increase in numbers and diversity during the Paleogene.",
@@ -203,6 +220,8 @@ const periods = {
   cretaceous: {
     height: 42.5,
     color: 'RGBA(242,114,0,0.5)',
+    image: 'Sue_TRex_Skull_Full_Frontal.JPG',
+    credit: 'Scott Robert Anselmo',
     name_en: 'Cretaceous Period',
     name_es: 'Periodo Cretácico',
     summary_en: "Earth's climate was warm during the Cretaceous, leading to oceans that covered large parts of many continents. Dinosaurs continued to dominate the planet's surface.",
@@ -213,6 +232,7 @@ const periods = {
   jurassic: {
     height: 30.3,
     color: 'RGBA(242,114,0,0.75)',
+    image: '960px-Karaurus_sharovi.JPG',
     name_en: 'Jurassic Period',
     name_es: 'Periodo Jurásico',
     summary_en: "During the Jurassic, dinosaurs became the dominant land animals and the supercontinent of Pangaea began to split into two.",
@@ -223,6 +243,8 @@ const periods = {
   triassic: {
     height: 27.2,
     color: 'RGBA(242,114,0,1)',
+    image: 'Claraia_Clarai_Museum_Gröden.jpg',
+    credit: 'Wolfgang Moroder',
     name_en: 'Triassic Period',
     name_es: 'Periodo Triásico',
     summary_en: "The Triassic began and ended with dramatic worldwide extinction events. In between, reptiles spread across the land, ocean, and air, including the emergence of the first dinosaurs.",
@@ -301,6 +323,7 @@ const periods = {
   ediacaran: {
     height: 20.9,
     color: 'RGBA(242,114,0,0.5)',
+    image: 'DickinsoniaCostata.jpg',
     name_en: 'Ediacaran Period',
     name_es: 'Periodo Ediacárico',
     summary_en: "The Ediacaran saw several periods of widespread glaciers, as well as the emergence of newly complex forms of multicellular life.",
@@ -311,6 +334,8 @@ const periods = {
   cryogenian: {
     height: 18.4,
     color: 'RGBA(242,114,0,0.75)',
+    image: 'AntarcticaDomeCSnow.jpg',
+    credit: 'Stephen Hudson',
     name_en: 'Cryogenian Period',
     name_es: 'Periodo Criogénico',
     summary_en: 'Scientists have nicknamed the Cryogenian "snowball Earth" due to its worldwide glaciers.',
@@ -321,6 +346,7 @@ const periods = {
   tonian: {
     height: 60.7,
     color: 'RGBA(242,114,0,1)',
+    image: 'Rodinia.jpg',
     name_en: 'Tonian Period',
     name_es: 'Periodo Tónico',
     summary_en: 'The first animals (as opposed to bacteria or fungi) likely appeared during the Tonian, which also saw the breakup of the Rodinia supercontinent.',
@@ -331,6 +357,7 @@ const periods = {
   stenian: {
     height: 33.3,
     color: 'RGBA(242,114,0,0.5)',
+    image: 'Rodinia.jpg',
     name_en: 'Stenian Period',
     name_es: 'Periodo Esténico',
     summary_en: "During the Stenian, the supercontinent of Rodinia formed.",
@@ -341,6 +368,8 @@ const periods = {
   ectasian: {
     height: 33.3,
     color: 'RGBA(242,114,0,0.75)',
+    image: 'Bangiomorpha_pubescens.jpg',
+    credit: 'N.J. Butterfield',
     name_en: 'Ectasian Period',
     name_es: 'Periodo Ectásico',
     summary_en: "Little is known about this period, but fossilized evidence of a species of red algae shows the first evidence of modern reproduction in any life.",
@@ -351,6 +380,7 @@ const periods = {
   calymmian: {
     height: 33.3,
     color: 'RGBA(242,114,0,1)',
+    image: '1590_Ma.png',
     name_en: 'Calymmian Period',
     name_es: 'Periodo Calímico',
     summary_en: "During the Calymmian, the supercontinent of Columbia began to drift apart.",
@@ -361,6 +391,7 @@ const periods = {
   statherian: {
     height: 22.2,
     color: 'RGBA(242,114,0,0.4)',
+    image: '1740_Ma_paleoglobe.png',
     name_en: 'Statherian Period',
     name_es: 'Periodo Estatérico',
     summary_en: "Little is known about the Statherian Period.",
@@ -371,6 +402,7 @@ const periods = {
   orosirian: {
     height: 27.8,
     color: 'RGBA(242,114,0,0.6)',
+    image: 'Vredefort_Dome_STS51I-33-56AA.jpg',
     name_en: 'Orosirian Period',
     name_es: 'Periodo Orosírico',
     summary_en: "During the Orosirian, the supercontinent of Columbia formed, and Earth suffered two of the largest asteroid impacts since the early days of the solar system.",
@@ -381,6 +413,8 @@ const periods = {
   rhyacian: {
     height: 27.8,
     color: 'RGBA(242,114,0,0.8)',
+    image: 'Mount_Vinson_from_NW_at_Vinson_Plateau.jpg',
+    credit: 'Christian Stangl',
     name_en: 'Rhyacian Period',
     name_es: 'Periodo Riásico',
     summary_en: "During the Rhyacian, Earth was covered by glaciers for around 100 million years. The first life large enough to be visible to the unaided eye evolved during this period.",
@@ -391,6 +425,7 @@ const periods = {
   siderian: {
     height: 22.2,
     color: 'RGBA(242,114,0,1)',
+    image: 'Cyanobacteria_guerrero_negro.jpg',
     name_en: 'Siderian Period',
     name_es: 'Periodo Sidérico',
     summary_en: 'During the Siderian, the "Great Oxygenation Event" occurred, in which cyanobacteria began producing oxygen through photosynthesis. Over the next 500 million years, the amount of oxygen in Earth\'s atmosphere would increase dramatically.',
@@ -435,12 +470,12 @@ function localize(lang) {
     eonDiv.appendChild(summary)
 
 
-    if (eon.imageUrl) {
+    if (eon.image) {
         const imgWrapper = document.createElement('div');
         imgWrapper.classList.add('image-wrapper');
         
         const img = document.createElement('img');
-        img.src = eon.imageUrl;
+        img.src = 'images/' + eon.image;
         img.classList.add('summary-image');
         imgWrapper.appendChild(img);
 
@@ -481,7 +516,6 @@ function localize(lang) {
     let i = 0;
     [...eon.eras].reverse().forEach((era) => {
       const eraDef = eras[era]
-
       const div = document.createElement('div')
       div.classList = 'era'
       div.style.backgroundColor = eraColors[i]
@@ -511,14 +545,15 @@ function localize(lang) {
     
       const summary = document.createElement('div')
       summary.classList = 'era-summary summary-container collapsed'
+      if (eon.key === 'archean') summary.classList.add('archean-summary')
       div.appendChild(summary)
 
-      if (eraDef.imageUrl) {
+      if (eraDef.image) {
           const imgWrapper = document.createElement('div');
           imgWrapper.classList.add('image-wrapper');
           
           const img = document.createElement('img');
-          img.src = eraDef.imageUrl;
+          img.src = 'images/' + eraDef.image;
           img.classList.add('summary-image');
           imgWrapper.appendChild(img);
 
@@ -590,12 +625,12 @@ function localize(lang) {
           summary.classList = 'period-summary summary-container collapsed'
           div.appendChild(summary)
 
-          if (periodDef.imageUrl) {
+          if (periodDef.image) {
               const imgWrapper = document.createElement('div');
               imgWrapper.classList.add('image-wrapper');
               
               const img = document.createElement('img');
-              img.src = periodDef.imageUrl;
+              img.src = 'images/' + periodDef.image;
               img.classList.add('summary-image');
               imgWrapper.appendChild(img);
 
@@ -640,6 +675,10 @@ function localize(lang) {
 
 function expandEon(eon) {
   // Expand the given eon
+
+  // Hide the pulsing hand
+  document.getElementById('pulsingHandContainer').style.display = 'none'
+
   if (eon.classList.contains('eon-expanded')) {
     collapseEon(eon)
     return
@@ -777,6 +816,9 @@ function resetInactivityTimer() {
       e.classList.remove('eon-collapsed')
       e.classList.remove('eon-expanded')
     }
+    // Then, show the pulsing hand
+    document.getElementById('pulsingHandContainer').style.display = 'block'
+
     // Then, make sure we are English
     setTimeout(() => {localize('en')}, 1000)
   }, 30000)
