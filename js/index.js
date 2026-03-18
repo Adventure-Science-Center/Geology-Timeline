@@ -51,10 +51,10 @@ const eras = {
     height: 12.2,
     color: 'RGBA(151,14,83,0.5)',
     imageUrl: '/images/flock.jpg',
-    credit: 'Image credit: Faisal Akram',
+    credit: 'Faisal Akram',
     name_en: 'Cenozoic Era',
     name_es: 'Era Cenozoica',
-    periods: ['quaternary', 'neogene', 'paleogene'],
+    periods: ['paleogene', 'neogene', 'quaternary'],
     summary_en: "The Cenozoic is the current era of Earth's history. It is marked by the flourishing of mammals and birds and the emergence of humans.",
     summary_es: 'El Cenozoico es la era actual de la historia de la Tierra. Está marcado por el surgimiento de mamíferos y aves, y la aparición de los humanos.',
     time_en: '66 Mya – Today',
@@ -89,7 +89,7 @@ const eras = {
     color: 'RGBA(151,14,83,0.75)',
     name_en: 'Mesoproterozoic Era',
     name_es: 'Era Mesoproterozoica',
-    periods: ['stenian', 'ectasian', 'calymmian'],
+    periods: ['calymmian', 'ectasian', 'stenian'],
     summary_en: "The Mesoproterozoic is the first era for which a comprehensive geologic record has been found. The continents we know today began to emerge, although their shapes were very different.",
     summary_es: '<small>El Mesoproterozoico es la primera era de la que se ha encontrado un registro geológico completo. Los continentes que conocemos hoy comenzaron a surgir durante esta era, aunque sus formas eran muy diferentes.</small>',
     time_en: '1600 – 1000 Mya',
@@ -100,7 +100,7 @@ const eras = {
     color: 'RGBA(151,14,83,0.75)',
     name_en: 'Mesozoic Era',
     name_es: 'Era Mesozoica',
-    periods: ['cretaceous', 'jurassic', 'triassic', ],
+    periods: ['triassic', 'jurassic', 'cretaceous'],
     summary_en: "The Mesozoic was dominated by the evolution of the dinosaurs, which lasted until a major extinction event 66 Mya.",
     summary_es: 'El Mesozoico estuvo dominado por la evolución de los dinosaurios, que duró hasta un importante evento de extinción hace 66 Ma.',
     time_en: '252 – 66 Mya',
@@ -123,7 +123,7 @@ const eras = {
     color: 'RGBA(151,14,83,0.5)',
     name_en: 'Neoproterozoic Era',
     name_es: 'Era Neoproterozoica',
-    periods: ['ediacaran', 'cryogenian', 'tonian'],
+    periods: ['tonian', 'cryogenian', 'ediacaran'],
     summary_en: 'During the Neoproterozoic, Earth became covered in glaciers and the first multi-cellular fossils are preserved.',
     summary_es: 'La Tierra se cubrió de glaciares durante el Neoproterozoico. Se conservan los primeros fósiles multicelulares.',
     time_en: '1000 – 539 Mya',
@@ -145,7 +145,7 @@ const eras = {
     color: 'RGBA(151,14,83,1)',
     name_en: 'Paleoproterozoic Era',
     name_es: 'Era Paleoproterozoica',
-    periods: ['statherian', 'orosirian', 'rhyacian', 'siderian'],
+    periods: ['siderian', 'rhyacian', 'orosirian', 'statherian'],
     summary_en: "The Paleoproterozoic saw the formation of the first continents. The rise of oxygen-producing cyanobacteria led to a dramatic increase of oxygen in the atmosphere, paving the way for life as we know it.",
     summary_es: "La formación de los primeros continentes se dio durante el Paleoproterozoico. El surgimiento de las cianobacterias productoras de oxígeno condujo a un aumento dramático en el oxígeno de la atmósfera, allanando el camino para la vida tal como la conocemos.",
     time_en: '2500 – 1600 Mya',
@@ -157,7 +157,7 @@ const eras = {
     color: 'RGBA(151,14,83,1)',
     name_en: 'Paleozoic Era',
     name_es: 'Era Paleozoica',
-    periods: ['permian', 'carboniferous', 'devonian', 'silurian', 'ordovician', 'cambrian'],
+    periods: ['cambrian', 'ordovician', 'silurian', 'devonian', 'carboniferous', 'permian'],
     summary_en: "The Paleozoic saw a massive increase in the variety and complexity of life on Earth.",
     summary_es: 'El Paleozoico vio un aumento masivo en la variedad y complejidad de la vida en la Tierra.',
     time_en: '539 – 252 Mya',
@@ -170,7 +170,7 @@ const periods = {
     height: 3.9,
     color: 'RGBA(242,114,0,0.5)',
     imageUrl: '/images/sprinters.jpg',
-    credit: 'Image credit: Darren Wilkinson',
+    credit: 'Darren Wilkinson',
     name_en: 'Quaternary Period',
     name_es: 'Periodo Cuaternario',
     summary_en: "The Quaternary is Earth's current geologic period, marked by periodic ice ages. It's most notable for the emergence of humans.",
@@ -408,6 +408,8 @@ function localize(lang) {
   // Clear current content
   eonContainer.innerHTML = ''
 
+  let localizedCredit = 'Image credit: '
+  if (lang === 'es') localizedCredit = 'Crédito de la imagen: '
   // Build content
   for (const key of ['phanerozoic', 'proterozoic','archean', 'hadean']) {
     const eon = eons[key]
@@ -451,7 +453,7 @@ function localize(lang) {
             // The credit text element
             const creditLabel = document.createElement('div');
             creditLabel.classList.add('credit-text', 'hidden');
-            creditLabel.innerText = eon.credit;
+            creditLabel.innerText = localizedCredit + eon.credit;
 
             infoBtn.addEventListener('click', (e) => {
                 e.stopPropagation(); // Prevent triggering the container's click
@@ -477,7 +479,7 @@ function localize(lang) {
 
     // Eras
     let i = 0;
-    eon.eras.reverse().forEach((era) => {
+    [...eon.eras].reverse().forEach((era) => {
       const eraDef = eras[era]
 
       const div = document.createElement('div')
@@ -529,7 +531,7 @@ function localize(lang) {
               // The credit text element
               const creditLabel = document.createElement('div');
               creditLabel.classList.add('credit-text', 'hidden');
-              creditLabel.innerText = eraDef.credit;
+              creditLabel.innerText = localizedCredit + eraDef.credit;
 
               infoBtn.addEventListener('click', (e) => {
                   e.stopPropagation(); // Prevent triggering the container's click
@@ -554,7 +556,7 @@ function localize(lang) {
 
         // Periods
         let j = 0
-        eraDef.periods.forEach((period) => {
+        eraDef.periods.toReversed().forEach((period) => {
           const periodDef = periods[period]
 
           const div = document.createElement('div')
@@ -606,7 +608,7 @@ function localize(lang) {
                   // The credit text element
                   const creditLabel = document.createElement('div');
                   creditLabel.classList.add('credit-text', 'hidden');
-                  creditLabel.innerText = periodDef.credit;
+                  creditLabel.innerText = localizedCredit + periodDef.credit;
 
                   infoBtn.addEventListener('click', (e) => {
                       e.stopPropagation(); // Prevent triggering the container's click
