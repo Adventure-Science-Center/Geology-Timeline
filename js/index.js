@@ -243,7 +243,7 @@ const periods = {
   triassic: {
     height: 27.2,
     color: 'RGBA(242,114,0,1)',
-    image: 'Claraia_Clarai_Museum_Gröden.jpg',
+    image: 'Claraia_Clarai_Museum_Groden.jpg',
     credit: 'Wolfgang Moroder',
     name_en: 'Triassic Period',
     name_es: 'Periodo Triásico',
